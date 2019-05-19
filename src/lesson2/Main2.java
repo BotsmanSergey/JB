@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 
-public class Main {
+public class Main2 {
 
     public static void main(String[] args) {
         System.out.println("Задание №1 Поменять 0 с 1");

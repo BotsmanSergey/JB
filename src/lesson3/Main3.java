@@ -4,7 +4,7 @@ package lesson3;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class Main3 {
 
     static Scanner sc = new Scanner(System.in);
     static Random rand = new Random();
@@ -52,30 +52,29 @@ public class Main {
 //                }
             }
             System.out.println("Хочешь испытать удачу ещё раз? 1-да/0-нет");
-            b = normalIn(0, 2);
+            b = normalIn(0, 1);
         } while (b != 0);
 
 
     }
     public static int normalIn(int m, int n){
-        n += 1;
         int g = -1;
         do {
             String str = sc.nextLine();
             if (str.length() == 1) {
-                for (int i = m; i < n; i++) {
+                for (int i = m; i < n+1; i++) {
                     if (str.equals(Integer.toString(i))) {
                         g = i;
                         break;
                     }
                 }
-                if (!(g >= 0 && g <= 9)){
+                if (!(g >= 0 && g <= n)){
                     System.out.printf("Не верный ввод, введите число от 0 до %d\n", n);
                 }
             } else {
-                System.out.println("Не верный ввод, введите число от 0 до 9 (только один символ) ");
+                System.out.printf("Не верный ввод, введите число от 0 до %d (только один символ)\n", n);
             }
-        }while (!(g >= 0 && g <= 9));
+        }while (!(g >= 0 && g <= n));
         //System.out.println("воздврат нормалИн " + g);
         return g;
     }
@@ -121,5 +120,3 @@ public class Main {
         System.out.println("Верно: " + food);
     }
 }
-//Pull-request
-
