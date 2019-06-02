@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Main4 {
     static Scanner sc = new Scanner(System.in);
-    static final int SIZE = 5;
-    static final int DOTS_TO_WIN = 4;     //Не может быть больше чем SIZE
+    static final int SIZE = 10;
+    static final int DOTS_TO_WIN = 6;     //Не может быть больше чем SIZE
     static final char[] simbols = {'X', 'O'};
     static char[][] pg = new char[SIZE][SIZE];
 
@@ -155,7 +155,7 @@ public class Main4 {
 
                 }
                 if (s == DOTS_TO_WIN) {
-                    System.out.println("You are the champion!!!");
+                    System.out.println(simbols[c] + " the champion!!!");
                     win = true;
                     break;
 
@@ -189,7 +189,7 @@ public class Main4 {
 
                 }
                 if (s == DOTS_TO_WIN) {
-                    System.out.println("You are the champion!!!");
+                    System.out.println(simbols[c]+ " the champion!!!");
                     win = true;
                     break;
 
@@ -209,7 +209,7 @@ public class Main4 {
 
                 }
                 if (s == DOTS_TO_WIN) {
-                    System.out.println("You are the champion!!!");
+                    System.out.println(simbols[c] + " the champion!!!");
                     win = true;
                     break;
 
@@ -244,10 +244,10 @@ public class Main4 {
     public static void stepPC() {
         System.out.println("Ход PC");
         int s;
-        boolean b;
+        boolean b = false;
         //Защита
         for (int h = 1; h < DOTS_TO_WIN; h++) {
-            b = false;
+            //b = false;
             for (int y = 0; y < SIZE; y++) {
                 for (int x = 0; x < SIZE - DOTS_TO_WIN + 1; x++) {
                     if (b) {
@@ -363,119 +363,119 @@ public class Main4 {
 
         }
         //Нападение
-//        if (b == false) {
-//            for (int h = 1; h < DOTS_TO_WIN; h++) {
-//                b = false;
-//                for (int y = 0; y < SIZE; y++) {
-//                    for (int x = 0; x < SIZE - DOTS_TO_WIN + 1; x++) {
-//                        if (b) {
-//                            break;
-//                        }
-//                        s = 0;
-//                        for (int i = 0; i < DOTS_TO_WIN; i++) {
-//                            if (pg[y][x + i] == simbols[1]) {
-//                                s += 1;
-//                            } else if (pg[y][x + i] == simbols[0]) {
-//                                break;
-//                            }
-//                        }
-//                        if (s == DOTS_TO_WIN - h) {
-//                            for (int i = 0; i < DOTS_TO_WIN; i++) {
-//                                if (pg[y][x + i] == '.') {
-//                                    pg[y][x + i] = simbols[1];
-//                                    b = true;
-//                                    break;
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//                if (b) {
-//                    break;
-//                }
-//                for (int y = 0; y < SIZE - DOTS_TO_WIN + 1; y++) {
-//                    for (int x = 0; x < SIZE; x++) {
-//                        if (b) {
-//                            break;
-//                        }
-//                        s = 0;
-//                        for (int i = 0; i < DOTS_TO_WIN; i++) {
-//                            if (pg[y + i][x] == simbols[1]) {
-//                                s += 1;
-//                            } else if (pg[y + i][x] == simbols[0]) {
-//                                break;
-//                            }
-//                        }
-//                        if (s == DOTS_TO_WIN - h) {
-//                            for (int i = 0; i < DOTS_TO_WIN; i++) {
-//                                if (pg[y + i][x] == '.') {
-//                                    pg[y + i][x] = simbols[1];
-//                                    b = true;
-//                                    break;
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//                if (b) {
-//                    break;
-//                }
-//                for (int y = 0; y < SIZE - DOTS_TO_WIN + 1; y++) {
-//                    for (int x = 0; x < SIZE - DOTS_TO_WIN + 1; x++) {
-//                        if (b) {
-//                            break;
-//                        }
-//                        s = 0;
-//                        for (int i = 0; i < DOTS_TO_WIN; i++) {
-//                            if (pg[y + i][x + i] == simbols[1]) {
-//                                s += 1;
-//                            } else if (pg[y + i][x + i] == simbols[0]) {
-//                                break;
-//                            }
-//                        }
-//                        if (s == DOTS_TO_WIN - h) {
-//                            for (int i = 0; i < DOTS_TO_WIN; i++) {
-//                                if (pg[y + i][x + i] == '.') {
-//                                    pg[y + i][x + i] = simbols[1];
-//                                    b = true;
-//                                    break;
-//                                }
-//                            }
-//                        }
-//
-//                    }
-//                }
-//                if (b) {
-//                    break;
-//                }
-//                for (int y = 0; y < SIZE - DOTS_TO_WIN + 1; y++) {
-//                    for (int x = DOTS_TO_WIN - 1; x < SIZE; x++) {
-//                        if (b) {
-//                            break;
-//                        }
-//                        s = 0;
-//                        for (int i = 0; i < DOTS_TO_WIN; i++) {
-////                    System.out.println(pg[y+i][DOTS_TO_WIN-i-1]+" "+ simbols[c]+ " x="+(DOTS_TO_WIN-i-1)+" " +i+" y="+(y+i));
-//                            if (pg[y + i][DOTS_TO_WIN - i - 1] == simbols[1]) {
-//                                s += 1;
-//                            } else if (pg[y + i][DOTS_TO_WIN - i - 1] == simbols[0]) {
-//                                break;
-//                            }
-//
-//                        }
-//                        if (s == DOTS_TO_WIN - h) {
-//                            for (int i = 0; i < DOTS_TO_WIN; i++) {
-//                                if (pg[y + i][DOTS_TO_WIN - i - 1] == '.') {
-//                                    pg[y + i][DOTS_TO_WIN - i - 1] = simbols[1];
-//                                    b = true;
-//                                    break;
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
+        if (b == false) {
+            for (int h = 1; h < DOTS_TO_WIN; h++) {
+                b = false;
+                for (int y = 0; y < SIZE; y++) {
+                    for (int x = 0; x < SIZE - DOTS_TO_WIN + 1; x++) {
+                        if (b) {
+                            break;
+                        }
+                        s = 0;
+                        for (int i = 0; i < DOTS_TO_WIN; i++) {
+                            if (pg[y][x + i] == simbols[1]) {
+                                s += 1;
+                            } else if (pg[y][x + i] == simbols[0]) {
+                                break;
+                            }
+                        }
+                        if (s == DOTS_TO_WIN - h) {
+                            for (int i = 0; i < DOTS_TO_WIN; i++) {
+                                if (pg[y][x + i] == '.') {
+                                    pg[y][x + i] = simbols[1];
+                                    b = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                if (b) {
+                    break;
+                }
+                for (int y = 0; y < SIZE - DOTS_TO_WIN + 1; y++) {
+                    for (int x = 0; x < SIZE; x++) {
+                        if (b) {
+                            break;
+                        }
+                        s = 0;
+                        for (int i = 0; i < DOTS_TO_WIN; i++) {
+                            if (pg[y + i][x] == simbols[1]) {
+                                s += 1;
+                            } else if (pg[y + i][x] == simbols[0]) {
+                                break;
+                            }
+                        }
+                        if (s == DOTS_TO_WIN - h) {
+                            for (int i = 0; i < DOTS_TO_WIN; i++) {
+                                if (pg[y + i][x] == '.') {
+                                    pg[y + i][x] = simbols[1];
+                                    b = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                if (b) {
+                    break;
+                }
+                for (int y = 0; y < SIZE - DOTS_TO_WIN + 1; y++) {
+                    for (int x = 0; x < SIZE - DOTS_TO_WIN + 1; x++) {
+                        if (b) {
+                            break;
+                        }
+                        s = 0;
+                        for (int i = 0; i < DOTS_TO_WIN; i++) {
+                            if (pg[y + i][x + i] == simbols[1]) {
+                                s += 1;
+                            } else if (pg[y + i][x + i] == simbols[0]) {
+                                break;
+                            }
+                        }
+                        if (s == DOTS_TO_WIN - h) {
+                            for (int i = 0; i < DOTS_TO_WIN; i++) {
+                                if (pg[y + i][x + i] == '.') {
+                                    pg[y + i][x + i] = simbols[1];
+                                    b = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                    }
+                }
+                if (b) {
+                    break;
+                }
+                for (int y = 0; y < SIZE - DOTS_TO_WIN + 1; y++) {
+                    for (int x = DOTS_TO_WIN - 1; x < SIZE; x++) {
+                        if (b) {
+                            break;
+                        }
+                        s = 0;
+                        for (int i = 0; i < DOTS_TO_WIN; i++) {
+//                    System.out.println(pg[y+i][DOTS_TO_WIN-i-1]+" "+ simbols[c]+ " x="+(DOTS_TO_WIN-i-1)+" " +i+" y="+(y+i));
+                            if (pg[y + i][DOTS_TO_WIN - i - 1] == simbols[1]) {
+                                s += 1;
+                            } else if (pg[y + i][DOTS_TO_WIN - i - 1] == simbols[0]) {
+                                break;
+                            }
+
+                        }
+                        if (s == DOTS_TO_WIN - h) {
+                            for (int i = 0; i < DOTS_TO_WIN; i++) {
+                                if (pg[y + i][DOTS_TO_WIN - i - 1] == '.') {
+                                    pg[y + i][DOTS_TO_WIN - i - 1] = simbols[1];
+                                    b = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
